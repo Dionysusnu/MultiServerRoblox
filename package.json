@@ -1,0 +1,19 @@
+{
+  "name": "multiserverroblox",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dionysusnu/MultiServerRoblox.git"
+  },
+  "author": "Dionysusnu",
+  "license": "GPL-3.0-or-later",
+  "bugs": {
+    "url": "https://github.com/Dionysusnu/MultiServerRoblox/issues"
+  },
+  "homepage": "https://github.com/Dionysusnu/MultiServerRoblox#readme"
+}
