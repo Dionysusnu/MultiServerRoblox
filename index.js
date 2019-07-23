@@ -10,19 +10,19 @@ app.post('/bot', async (req, res) => {
 	switch (req.body.type) {
 	case 'heartbeat': {
 		servers[req.body.jobId] = req.body.table;
-		res.status(204).end();
+		res.sendstatus(204);
 		break;
 	}
 	case 'getservers': {
 		console.log(servers);
-		res.status(200).json(servers);
+		res.status(200).send(servers);
 		break;
 	}
 	}
 });
 
 app.get('/bot', async (req, res) => {
-	res.status(405).end();
+	res.sendstatus(405);
 });
 
 const port = process.env.PORT || process.env.OPENSHIFT_NODEJS_PORT || 8080,
