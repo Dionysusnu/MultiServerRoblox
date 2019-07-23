@@ -3,7 +3,7 @@ const app = express();
 
 app.use(express.json());
 
-const servers = [];
+const servers = new Map();
 
 app.post('/bot', async (req, res) => {
 	console.log(new Date() + ': POST on /bot');

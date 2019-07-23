@@ -30,7 +30,7 @@ local function OnHeartbeat(Delta)
 	end;
 end;
 
-local Conn = RunService.Heartbeat:Connect(OnHeartbeat)
+local Conn = RunService.Heartbeat:Connect(OnHeartbeat);
 
 game:BindToClose(function()
 	Conn:Disconnect();
