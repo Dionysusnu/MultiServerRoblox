@@ -30,4 +30,12 @@ local function OnHeartbeat(Delta)
 	end;
 end;
 
-RunService.Heartbeat:Connect(OnHeartbeat)
+local Conn = RunService.Heartbeat:Connect(OnHeartbeat)
+
+game:BindToClose(function()
+	Conn:Disconnect();
+	local Data = {};
+	Data.type = "serverclose"
+	local Encoded = HttpService:JSONEncode(Data);
+	HttpService:PostAsync(Url, Encoded);
+end);
