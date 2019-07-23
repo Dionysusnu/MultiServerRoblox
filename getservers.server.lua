@@ -21,6 +21,8 @@ local function onHeartbeat(Delta)
 	end
 end
 
+RunService.Heartbeat:Connect(onHeartbeat)
+
 local function RetreiveServers()
 	return Servers;
 end

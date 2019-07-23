@@ -6,6 +6,7 @@ app.use(express.json());
 const servers = [];
 
 app.post('/bot', async (req, res) => {
+	console.log(new Date() + ': POST on /bot');
 	switch (req.body.type) {
 	case 'heartbeat': {
 		servers[req.body.jobId] = req.body.table;
@@ -13,7 +14,7 @@ app.post('/bot', async (req, res) => {
 		break;
 	}
 	case 'getservers': {
-		res.status(204).json(servers);
+		res.status(200).json(servers);
 		break;
 	}
 	}

@@ -9,7 +9,7 @@ local function UpdateStatus()
 	local PlayersTable = {};
 	local Players = PlayersService:GetPlayers();
 	for i = 1, #Players do
-		PlayersTable[Players[i].UserId] = Players[i].Name;
+		PlayersTable[tostring(Players[i].UserId)] = Players[i].Name;
 	end;
 	Data.table = {
 		placeId = game.PlaceId;
@@ -21,10 +21,12 @@ local function UpdateStatus()
 end;
 
 local Count = 0;
-local function OnHearbeat(Delta)
+local function OnHeartbeat(Delta)
 	Count = Count + Delta;
 	if Count > 5 then
 		Count = Count - 5;
 		UpdateStatus();
 	end;
 end;
+
+RunService.Heartbeat:Connect(OnHeartbeat)
