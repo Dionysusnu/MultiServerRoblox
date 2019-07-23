@@ -14,6 +14,7 @@ app.post('/bot', async (req, res) => {
 		break;
 	}
 	case 'getservers': {
+		console.log(servers);
 		res.status(200).json(servers);
 		break;
 	}
