@@ -9,12 +9,12 @@ app.post('/bot', async (req, res) => {
 	console.log(new Date() + ': POST on /bot');
 	switch (req.body.type) {
 	case 'heartbeat': {
-		servers[req.body.jobId] = req.body.table;
+		servers.push(req.body.table);
 		res.sendStatus(204);
 		break;
 	}
 	case 'getservers': {
-		console.log(servers);
+		// console.log(servers);
 		res.status(200).send(servers);
 		break;
 	}
