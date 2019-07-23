@@ -19,7 +19,7 @@ app.post('/bot', async (req, res) => {
 		break;
 	}
 	case 'serverclose': {
-		servers[req.body.jobId] = null;
+		delete servers[req.body.jobId];
 		res.sendStatus(204);
 		break;
 	}

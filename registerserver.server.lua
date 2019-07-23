@@ -36,6 +36,7 @@ game:BindToClose(function()
 	Conn:Disconnect();
 	local Data = {};
 	Data.type = "serverclose"
+	Data.jobId = game.JobId;
 	local Encoded = HttpService:JSONEncode(Data);
 	HttpService:PostAsync(Url, Encoded);
 end);
