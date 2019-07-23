@@ -27,4 +27,4 @@ local function RetreiveServers()
 	return Servers;
 end
 
-game:GetService("ReplicatedStorage").GetServersRemote.OnServerInvoke = 	RetreiveServers
+game:GetService("ReplicatedStorage").GetServersRemote.OnServerInvoke = RetreiveServers
