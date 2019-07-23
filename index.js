@@ -9,14 +9,18 @@ app.post('/bot', async (req, res) => {
 	console.log(new Date() + ': POST on /bot');
 	switch (req.body.type) {
 	case 'heartbeat': {
-		servers.push(req.body.table);
+		servers.set(req.body.jobId, req.body.table);
 		res.sendStatus(204);
 		break;
 	}
 	case 'getservers': {
 		// console.log(servers);
-		res.status(200).send(servers);
+		res.status(200).json(Object.fromEntries(servers));
 		break;
+	}
+	case 'serverclose': {
+		servers.delete(req.body.jobId);
+		res.sendStatus(204);
 	}
 	}
 });

@@ -6,13 +6,13 @@ local Url = "your.domain.here/bot";
 local function UpdateStatus()
 	local Data = {};
 	Data.type = "heartbeat"
+	Data.jobId = game.JobId;
 	local PlayersTable = {};
 	local Players = PlayersService:GetPlayers();
 	for i = 1, #Players do
 		PlayersTable[tostring(Players[i].UserId)] = Players[i].Name;
 	end;
 	Data.table = {
-		jobId = game.JobId;
 		placeId = game.PlaceId;
 		playerCount = #PlayersTable;
 		players = PlayersTable;
