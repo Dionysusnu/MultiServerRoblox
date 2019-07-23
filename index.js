@@ -3,19 +3,19 @@ const app = express();
 
 app.use(express.json());
 
-const servers = new Map();
+const servers = {};
 
 app.post('/bot', async (req, res) => {
 	console.log(new Date() + ': POST on /bot');
 	switch (req.body.type) {
 	case 'heartbeat': {
-		servers.set(req.body.jobId, req.body.table);
+		servers[req.body.jobId] = req.body.table;
 		res.sendStatus(204);
 		break;
 	}
 	case 'getservers': {
 		// console.log(servers);
-		res.status(200).json(Object.fromEntries(servers));
+		res.status(200).json(servers);
 		break;
 	}
 	case 'serverclose': {
