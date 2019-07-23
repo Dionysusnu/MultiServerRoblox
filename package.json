@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/Dionysusnu/MultiServerRoblox/issues"
   },
-  "homepage": "https://github.com/Dionysusnu/MultiServerRoblox#readme"
+  "homepage": "https://github.com/Dionysusnu/MultiServerRoblox#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }

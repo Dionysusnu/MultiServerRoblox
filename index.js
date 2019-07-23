@@ -8,12 +8,12 @@ const servers = [];
 app.post('/bot', async (req, res) => {
 	switch (req.body.type) {
 	case 'heartbeat': {
-		servers[req.body.num] = req.body.players;
-		res.end();
+		servers[req.body.jobId] = req.body.table;
+		res.status(204).end();
 		break;
 	}
 	case 'getservers': {
-		res.json(servers);
+		res.status(204).json(servers);
 		break;
 	}
 	}
