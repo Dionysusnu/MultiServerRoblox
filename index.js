@@ -14,13 +14,14 @@ app.post('/bot', async (req, res) => {
 		break;
 	}
 	case 'getservers': {
-		// console.log(servers);
+		console.log(servers);
 		res.status(200).json(servers);
 		break;
 	}
 	case 'serverclose': {
-		servers.delete(req.body.jobId);
+		servers[req.body.jobId] = null;
 		res.sendStatus(204);
+		break;
 	}
 	}
 });
